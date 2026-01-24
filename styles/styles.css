@@ -1,3 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Class Selectors*/
+
+.box {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    background-color: #ddd;
+    color: #000;
+}
+
 :root {
     --nav-padding: 20px;
     --main-color: darkblue;
@@ -20,6 +36,7 @@ main {
 }
 
 main img {
+    float: right;
     width: 200px;
     height: auto;
     border: 1px solid black;
@@ -33,13 +50,16 @@ p {
 
 aside {
     width: 20rem;
-    margin: var(--spacing-small);
-    border: 1px solid rgb(0 0 0 / 0.2);
-    /* 1 */
-    padding: var(--spacing-small);
-    background-color: #eee;
-    color: #333;
     text-align: center;
+    position: relative;
+    padding-top: 2.5rem;
+}
+
+aside h2 {
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(225, 225, 225, 0.7);
+    padding: 0.25rem 0.5rem;
 }
 
 aside img {
