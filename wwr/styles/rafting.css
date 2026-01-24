@@ -1,0 +1,128 @@
+/*rafting.css*/
+
+/* 1 define css variables*/
+
+:root {
+    --primary-color: #f4a261;
+    --secondary-color: #055a05;
+    --accent1-color: #264653;
+    --accent2-color: #e9c46a;
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+
+}
+
+/* 2 resent box-model properties*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3 boby styling*/
+
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+}
+
+/* 4 limit page width and center content*/
+
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 5 header background and text color example*/
+
+header {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 20px;
+    align-items: center;
+}
+
+/* 6 style heading*/
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+/* 7 basic consistent margin and padding for common elements*/
+
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* 8 remove underlines from social media image links in footer*/
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* 9 hero section*/
+
+.hero {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* 10 hero heading overlay*/
+
+.hero h1 {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--accent1-color);
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* 11 hero article overlay*/
+
+.hero article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin-top: 60px;
+}
+
+/* 12 image inside hero article*/
+
+.hero article img {
+    float: right;
+    width: 125px;
+    height: auto;
+    margin-left: 15px;
+    margin-bottom: 10px;
+
+}
