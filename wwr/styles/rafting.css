@@ -20,7 +20,7 @@
     box-sizing: border-box;
 }
 
-/* 3 body styling*/
+/* 3 base body styling*/
 
 body {
     font-family: var(--body-font);
@@ -28,7 +28,7 @@ body {
     line-height: 1.6;
 }
 
-/* 4 limit page width and center content*/
+/* 4 layout containers(header/main/footer)*/
 
 header,
 main,
@@ -39,7 +39,7 @@ footer {
 
 }
 
-/* 5 header styling with grid*/
+/* 5 header  & navigation styling */
 
 header {
     background-color: var(--primary-color);
@@ -57,8 +57,6 @@ header img {
     height: auto;
     margin-left: 80px;
 }
-
-/* 6 navigation with flex*/
 
 nav {
     display: flex;
@@ -78,7 +76,7 @@ nav a {
 
 }
 
-/* 7 style heading*/
+/* 6 style heading*/
 
 h1,
 h2 {
@@ -88,53 +86,60 @@ h2 {
     text-align: center;
 }
 
-/* 8 hero section*/
+/* 7 hero section*/
 
 .hero {
     position: relative;
-    margin-bottom: 40px;
     width: 100%;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    max-width: 1200px;
+    height: 600px;
+    margin: 0 auto 2rem;
     overflow: hidden;
-    border-radius: 12px;
 }
 
-.hero h1 {
-    position: absolute;
-    top: 20px;
+.hero img {
     width: 100%;
-    padding: 16px;
-    text-align: center;
-    background-color: var(--accent1-color);
-    color: #fff;
-    opacity: 0.7;
-    margin: 0;
-    box-sizing: border-box;
-    z-index: 10;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
+.hero-overlay {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 90%;
+    max-width: 1200px;
+
+    background-color: rgba(38, 70, 83, 0.65);
+    padding: 1.5rem;
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.hero-overlay h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
 .hero article {
     position: absolute;
-    top: 120px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 10;
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+    padding: 25px;
+    z-index: 2;
+    max-width: 900px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero article img {
@@ -143,18 +148,18 @@ h2 {
     height: auto;
     margin-left: 15px;
     margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     border: 2px solid var(--secondary-color);
 
 }
 
 .hero article p {
     margin: 0;
-    text-align: left;
+    text-align: center;
     line-height: 1.8;
 }
 
-/* 9 history section updated */
+/* 8 history section updated */
 
 .history {
     padding: 40px 20px;
@@ -169,6 +174,7 @@ h2 {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -176,12 +182,16 @@ h2 {
 .history-content p {
     flex: 1;
     text-align: justify;
-    max-width: 880px;
+
     margin: 20px auto;
-    text-align: justify;
+
 }
 
-/* 10 adventrue section */
+.history-content img {
+    border-radius: 10px;
+}
+
+/* 9 adventrue section */
 
 .adventure {
     padding: 40px 20px;
@@ -199,15 +209,16 @@ figcaption {
 }
 
 figure img {
-    width: 200px
+    width: 200px;
+    border-radius: 10px;
 }
 
 figure {
-    padding: 0;
+
     margin: 10px;
 }
 
-/* 11 footer */
+/* 10 footer */
 
 footer {
     display: flex;
@@ -249,12 +260,7 @@ footer p {
 
 /*w5*/
 
-/*company information */
-.contact-container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-}
+/* 11 company information section*/
 
 .company-info {
     text-align: center;
@@ -274,7 +280,7 @@ footer p {
     line-height: 1.8;
 }
 
-/* map-form */
+/* 12 map-form section*/
 
 .form-section {
     flex: 1;
@@ -296,7 +302,7 @@ footer p {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .map {
@@ -314,7 +320,7 @@ footer p {
 
 .map iframe {
     width: 100%;
-    height: 650px;
+    height: 100%;
     border-radius: 8px;
     border: 2px solid var(--accent2-color);
 }
@@ -323,6 +329,7 @@ footer p {
     flex: 1;
     min-width: 300px;
     background-color: #f8f9fa;
+
     padding: 30px;
     border-radius: 12px;
     border: 2px solid var(--accent2-color);
@@ -330,7 +337,8 @@ footer p {
 
 .contact-form form {
     margin-bottom: 20px;
-    display: flex;
+    display: flow-root;
+
     flex-direction: column;
     gap: 20px;
 }
@@ -342,7 +350,8 @@ footer p {
     margin-top: 10px;
 }
 
-/* form */
+/* 13 form section*/
+
 .contact-form label {
     font-weight: bold;
     color: var(--accent1-color);
@@ -357,6 +366,8 @@ footer p {
     border-radius: 6px;
     box-sizing: border-box;
 }
+
+/* 14 employee section */
 
 .employee-section {
     max-width: 1200px;
@@ -415,19 +426,6 @@ footer p {
     text-align: center;
 }
 
-.employee-card h3 {
-    color: var(--accent1-color);
-    margin-bottom: 8px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.employee-card p {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    line-height: 1.4;
-}
-
 @media (max-width: 768px) {
     .employee-grid {
         flex-direction: column;
@@ -465,4 +463,315 @@ footer p {
 
 .submit-btn:hover {
     background-color: #044004;
+}
+
+/*w6*/
+/* home */
+/* hero */
+
+.hero-cta {
+    position: absolute;
+    top: 50%;
+
+    right: 5%;
+
+    transform: translateY(-50%);
+
+    width: 350px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    text-align: center;
+}
+
+.hero-cta p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 90, 43, 0.4);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 500px;
+    }
+
+    .hero-cta {
+        position: static;
+        transform: none;
+        width: 90%;
+        max-width: 400px;
+        margin: 30px auto 0;
+        top: auto;
+        right: auto;
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 450px;
+    }
+
+    .hero-cta {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .hero-cta p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* why choose us */
+.features {
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.grid-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.grid-item h3,
+.grid-item p {
+    padding: 1rem;
+}
+
+/* stay updated */
+.newsletter {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.newsletter form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.newsletter button {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Trips Page Specific Styles */
+/* Trips Page 样式 */
+
+.trips-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* CTA区域 */
+.trips-cta {
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.trips-cta h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.trip-details {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #ff6b35;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background-color: #e55a2b;
+}
+
+/* 旅行列表 */
+.trips-list {
+    margin-bottom: 40px;
+}
+
+.trips-list h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.trip-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trip-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.trip-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.trip-info h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.trip-info p {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+/* 表格 */
+.trips-table {
+    margin-bottom: 40px;
+}
+
+.trips-table h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.trips-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trips-table th {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.trips-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.trips-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .trip-item {
+        flex-direction: column;
+    }
+
+    .trip-item img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .trips-table {
+        overflow-x: auto;
+    }
+
+    .trips-table table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trips-cta {
+        padding: 20px;
+    }
+
+    .trips-cta h1 {
+        font-size: 1.5rem;
+    }
 }
